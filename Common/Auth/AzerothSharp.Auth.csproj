@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\Bin\Debug\net6.0</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Bin\Release\net6.0</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Client\" />
+    <None Remove="Handler\" />
+    <None Remove="Helper\" />
+    <None Remove="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Server\" />
+    <Folder Include="Packet\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\AzerothSharp.Logging.csproj" />
+    <ProjectReference Include="..\Cryptography\AzerothSharp.Cryptography.csproj" />
+  </ItemGroup>
+</Project>

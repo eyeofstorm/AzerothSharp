@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\Bin\Debug\net6.0</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Bin\Release\net6.0</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Packets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Packets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\AzerothSharp.Logging.csproj" />
+    <ProjectReference Include="..\Auth\AzerothSharp.Auth.csproj" />
+    <ProjectReference Include="..\Storage\AzerothSharp.Storage.csproj" />
+    <ProjectReference Include="..\Common\AzerothSharp.Common.csproj" />
+    <ProjectReference Include="..\Auth.Storage\AzerothSharp.Auth.Storage.csproj" />
+  </ItemGroup>
+</Project>

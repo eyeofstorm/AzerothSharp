@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>latestmajor</LangVersion>
+    <OutputPath>..\Bin\Debug\net6.0</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>latestmajor</LangVersion>
+    <OutputPath>..\Bin\Release\net6.0</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Autofac" />
+    <None Remove="Modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Logger.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Modules\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Configuration\AzerothSharp.Configuration.csproj" />
+    <ProjectReference Include="..\Common\Auth.Configuration\AzerothSharp.Auth.Configuration.csproj" />
+    <ProjectReference Include="..\Common\Common\AzerothSharp.Common.csproj" />
+    <ProjectReference Include="..\Common\Auth.Network\AzerothSharp.Auth.Network.csproj" />
+    <ProjectReference Include="..\Common\Auth.Storage.MySql\AzerothSharp.Auth.Storage.MySql.csproj" />
+    <ProjectReference Include="..\Common\Storage.MySql\AzerothSharp.Storage.MySql.csproj" />
+    <ProjectReference Include="..\Common\Shared\AzerothSharp.Shared.csproj" />
+    <ProjectReference Include="..\Common\Auth.Configuration\AzerothSharp.Auth.Configuration.csproj" />
+    <ProjectReference Include="..\Common\Configuration.Xml\AzerothSharp.Configuration.Xml.csproj" />
+    <ProjectReference Include="..\Common\Logging\AzerothSharp.Logging.csproj" />
+    <ProjectReference Include="..\Common\Auth.Storage\AzerothSharp.Auth.Storage.csproj" />
+    <ProjectReference Include="..\Common\Network.Tcp\AzerothSharp.Network.Tcp.csproj" />
+    <ProjectReference Include="..\Common\Storage\AzerothSharp.Storage.csproj" />
+  </ItemGroup>
+</Project>

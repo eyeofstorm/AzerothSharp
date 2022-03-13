@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\Bin\Debug\net6.0</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\Bin\Release\net6.0</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Globals\" />
+    <Folder Include="Banner\" />
+    <Folder Include="Enums\Realm\" />
+    <Folder Include="Enums\Acount\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Enums\Realms\" />
+    <None Remove="Enums\Acount\" />
+    <None Remove="Utilities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logging\AzerothSharp.Logging.csproj" />
+  </ItemGroup>
+</Project>
