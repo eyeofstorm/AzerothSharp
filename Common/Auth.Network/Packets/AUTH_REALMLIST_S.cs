@@ -21,6 +21,5 @@ public class AUTH_REALMLIST_S
 {
     public AUTH_REALMLIST_S()
     {
-
     }
 }

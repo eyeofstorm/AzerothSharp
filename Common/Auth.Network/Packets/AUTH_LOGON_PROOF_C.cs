@@ -25,6 +25,10 @@ public struct AUTH_LOGON_PROOF_C
     public byte[]   ClientPublicKey { get; set; } = new byte[32];
     public byte[]   ClientM1        { get; set; } = new byte[20];
     public byte[]   CrcHash         { get; set; } = new byte[20];
-    public int      NumberOfKeys    { get; set; }
+    public int      NumberOfKeys    { get; set; } = 0;
     public byte     SecurityFlags   { get; set; } = 0x0;
+
+    public AUTH_LOGON_PROOF_C()
+    {
+    }
 }

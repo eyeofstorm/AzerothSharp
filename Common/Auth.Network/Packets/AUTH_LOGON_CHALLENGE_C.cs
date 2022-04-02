@@ -28,18 +28,22 @@ public struct AUTH_LOGON_CHALLENGE_C
     public const int COUNTRY_LENGTH = 4;
 
     public byte   Command           { get; set; } = (byte)AuthCMD.CMD_AUTH_LOGON_CHALLENGE;
-    public byte   ErrorCode         { get; set; }
-    public Int16  Length            { get; set; }
-    public String GameName          { get; set; } = String.Empty;
-    public byte   Version1          { get; set; }
-    public byte   Version2          { get; set; }
-    public byte   Version3          { get; set; }
-    public UInt16  ClientBuild      { get; set; }
+    public byte   ErrorCode         { get; set; } = 0x0;
+    public short  Length            { get; set; } = 0;
+    public string GameName          { get; set; } = string.Empty;
+    public byte   Version1          { get; set; } = 0x0;
+    public byte   Version2          { get; set; } = 0x0;
+    public byte   Version3          { get; set; } = 0x0;
+    public ushort ClientBuild       { get; set; } = 0;
     public byte[] Platform          { get; set; } = new byte[PLATFORM_LENGTH];
     public byte[] OS                { get; set; } = new byte[OS_LENGTH];
     public byte[] Country           { get; set; } = new byte[COUNTRY_LENGTH];
-    public Int32  TimeZoneBias      { get; set; }
-    public Int32  IpAddress         { get; set; }
-    public byte   AccountNameLength { get; set; }
-    public string AccountName       { get; set; } = String.Empty;
+    public int    TimeZoneBias      { get; set; } = 0;
+    public int    IpAddress         { get; set; } = 0;
+    public byte   AccountNameLength { get; set; } = 0;
+    public string AccountName       { get; set; } = string.Empty;
+
+    public AUTH_LOGON_CHALLENGE_C()
+    {
+    }
 }

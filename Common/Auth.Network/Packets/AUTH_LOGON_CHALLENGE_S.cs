@@ -23,20 +23,20 @@ namespace AzerothSharp.Auth.Network;
 public struct AUTH_LOGON_CHALLENGE_S
 {
     public const int SALTLENGTH = 32;
-	public const int EPHEMERAL_KEY_LENGTH = 32;
+    public const int EPHEMERAL_KEY_LENGTH = 32;
 
-	public byte   Command         { get; set; } = (byte)AuthCMD.CMD_AUTH_LOGON_CHALLENGE;
-	public byte   ErrorCode       { get; set; } = 0x0;
-	public byte[] ServerPublicKey { get; set; } = new byte[EPHEMERAL_KEY_LENGTH];
-	public byte[] Generator       { get; set; } = new byte[1];
-	public byte[] SafePrime       { get; set; } = new byte[EPHEMERAL_KEY_LENGTH];
-	public byte[] Salt            { get; set; } = new byte[SALTLENGTH];
+    public byte   Command         { get; set; } = (byte)AuthCMD.CMD_AUTH_LOGON_CHALLENGE;
+    public byte   ErrorCode       { get; set; } = 0x0;
+    public byte[] ServerPublicKey { get; set; } = new byte[EPHEMERAL_KEY_LENGTH];
+    public byte[] Generator       { get; set; } = new byte[1];
+    public byte[] SafePrime       { get; set; } = new byte[EPHEMERAL_KEY_LENGTH];
+    public byte[] Salt            { get; set; } = new byte[SALTLENGTH];
 
-	public AUTH_LOGON_CHALLENGE_S(SrpInteger serverPublicKey, SrpInteger generator, SrpInteger safePrime, SrpInteger salt)
+    public AUTH_LOGON_CHALLENGE_S(SrpInteger serverPublicKey, SrpInteger generator, SrpInteger safePrime, SrpInteger salt)
     {
-		Array.Copy(serverPublicKey.ToByteArray().Reverse().ToArray(), ServerPublicKey, EPHEMERAL_KEY_LENGTH);
-		Array.Copy(generator.ToByteArray().Reverse().ToArray(), Generator, 1);
-		Array.Copy(safePrime.ToByteArray().Reverse().ToArray(), SafePrime, EPHEMERAL_KEY_LENGTH);
-		Array.Copy(salt.ToByteArray().Reverse().ToArray(), Salt, SALTLENGTH);
-	}
+        Array.Copy(serverPublicKey.ToByteArray().Reverse().ToArray(), ServerPublicKey, EPHEMERAL_KEY_LENGTH);
+        Array.Copy(generator.ToByteArray().Reverse().ToArray(), Generator, 1);
+        Array.Copy(safePrime.ToByteArray().Reverse().ToArray(), SafePrime, EPHEMERAL_KEY_LENGTH);
+        Array.Copy(salt.ToByteArray().Reverse().ToArray(), Salt, SALTLENGTH);
+    }
 }

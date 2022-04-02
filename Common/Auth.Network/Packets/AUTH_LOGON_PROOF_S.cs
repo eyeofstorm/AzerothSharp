@@ -22,10 +22,14 @@ namespace AzerothSharp.Auth.Network;
 
 public struct AUTH_LOGON_PROOF_S
 {
-    public byte   Command      { get; set; } = (byte)AuthCMD.CMD_AUTH_LOGON_PROOF;
-    public byte   Error        { get; set; }
-    public byte[] M2           { get; set; } = Array.Empty<byte>();
-    public UInt32 AccountFlags { get; set; }
-    public UInt32 SurveyId     { get; set; }
-    public UInt32 LoginFlags   { get; set; }
+    public byte     Command         { get; set; } = (byte)AuthCMD.CMD_AUTH_LOGON_PROOF;
+    public byte     Error           { get; set; } = 0x0;
+    public byte[]   M2              { get; set; } = Array.Empty<byte>();
+    public uint     AccountFlags    { get; set; } = 0;
+    public uint     SurveyId        { get; set; } = 0;
+    public uint     LoginFlags      { get; set; } = 0;
+
+    public AUTH_LOGON_PROOF_S()
+    {
+    }
 }
